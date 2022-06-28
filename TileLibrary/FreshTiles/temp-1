@@ -1,0 +1,41 @@
+sed -i -e '/ 9872  /d' ortho-n.pdb
+
+sed -i -e '/ 9653  /d' ortho-n.pdb
+
+sed -i -e '/ 9198  /d' ortho-n.pdb
+
+sed -i -e '/ 8857  /d' ortho-n.pdb
+
+sed -i -e '/ 9523  /d' ortho-n.pdb
+
+sed -i -e '/ 9199  /d' ortho-n.pdb
+
+sed -i -e '/ 8874  /d' ortho-n.pdb
+
+sed -i -e '/ 9873  /d' ortho-n.pdb
+
+sed -i -e '/ 9897  /d' ortho-n.pdb
+
+sed -i -e '/ 9768  /d' ortho-n.pdb
+
+sed -i -e '/ 2563  /d' ortho-n.pdb
+
+sed -i -e '/ 3164  /d' ortho-n.pdb
+
+sed -i -e '/ 2226  /d' ortho-n.pdb
+
+sed -i -e '/ 2582  /d' ortho-n.pdb
+
+sed -i -e '/ 2976  /d' ortho-n.pdb
+
+sed -i -e '/ 2225  /d' ortho-n.pdb
+
+sed -i -e '/ 9760  /d' ortho-n.pdb
+
+sed -i -e '/ 2562  /d' ortho-n.pdb
+
+sed -i -e '/ 9767  /d' ortho-n.pdb
+
+sed -i -e '/ 2207  /d' ortho-n.pdb
+
+sed -i -e '/ 9756  /d' ortho-n.pdb
