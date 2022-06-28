@@ -53,11 +53,6 @@ python3 ../Scripts/atom-typing.py --infile removed.pdb
 ```
 Directory          Description
 ---------------------------------------------------------------------------------------------
-HoleCreation/      Images and pdb files for explanation purposes
 HoleLibrary/       Current library of .xyz holes
 Scripts/           All scripts
-TileCreation/      In-progress tile creation
-VMD_Visualization/ VMD visualization scripts
-manuscript/        In-progress manuscript
 ```
-
