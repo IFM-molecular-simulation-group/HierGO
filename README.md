@@ -29,7 +29,7 @@ python3 ../Scripts/decorate-tile.py --infile topo-tile.pdb --aged --percento 20
 
 ## Stitch tiles together
 ```
-python3 ../Scripts/stich.py --infiles file1 file2 file3 file4
+python3 ../Scripts/stitch.py --infiles file1 file2 file3 file4
 ## Manually check the geometry for questionable atoms, if they occur remove them
 python3 ../Scripts/remove-atoms.py -i 1 2 3 4 5 
 ```
@@ -43,7 +43,7 @@ python3 ../Scripts/atom-typing.py --infile removed.pdb
 ## If there are unbound atoms flagged by the typing script, 
 ## check where they are, and if they should not be present remove them
 ## Ideally, you would have removed or adjusted these after your manual 
-## check of the stiched geometry
+## check of the stitched geometry
 python3 ../Scripts/remove-atoms.py -i 1 2 3 4 5
 ## Re-run typing script until no unbound atoms occur
 python3 ../Scripts/atom-typing.py --infile removed.pdb
