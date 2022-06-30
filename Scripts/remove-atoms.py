@@ -59,7 +59,7 @@ def write_pdb_file(coords,atomtypes,abc,FileName):
 def read_inputs():
     parser = ArgumentParser(description='A simple code to remove atoms based on given indices and add \
     hydrogen to new two-fold coordinated carbon atoms.')
-    parser.add_argument('--infile', default="stiched.pdb", help='input file name (pdb)')
+    parser.add_argument('--infile', default="stitched.pdb", help='input file name (pdb)')
     parser.add_argument('--i', nargs='+', help='<Required> Set flag; indicies of atoms to remove', required=True)
     parser.add_argument('--outfile', nargs='?', default="removed.pdb", type=str, help="output file name (pdb)")
     args = parser.parse_args()
