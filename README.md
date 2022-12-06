@@ -9,7 +9,7 @@
 ## Inputs to all scripts can be reviewed using the -h option:
 python3 ../Scripts/create-tile.py --h
 ```
-## Creating a GO tile with equal epoxy:hydroxyl ratio
+### Creating a GO tile with equal epoxy:hydroxyl ratio
 ```
 ## Create a tile 
 python3 ../Scripts/create-tile.py --percentvac 10
@@ -17,7 +17,7 @@ python3 ../Scripts/create-tile.py --percentvac 10
 python3 ../Scripts/decorate-tile.py --fresh --percento 30
 ```
 
-## Creating a GO tile with all functional groups and topo defects
+### Creating a GO tile with all functional groups and topo defects
 ```
 ## Create a tile
 python3 ../Scripts/create-tile.py --percentvac 20
@@ -27,14 +27,14 @@ python3 ../Scripts/add-sw-defects.py --sw 5 --gb 5
 python3 ../Scripts/decorate-tile.py --infile topo-tile.pdb --aged --percento 20
 ```
 
-## Stitch tiles together
+### Stitching tiles together
 ```
 python3 ../Scripts/stitch.py --infiles file1 file2 file3 file4
 ## Manually check the geometry for questionable atoms, if they occur remove them
 python3 ../Scripts/remove-atoms.py -i 1 2 3 4 5 
 ```
 
-## Atom typing for OPLS
+### Atom typing for OPLS
 ```
 ## Run the atom typing script for use with OPLS
 ##   **Unfortunately, this script is quite slow for a large number of atoms, feel free to look into 
@@ -51,7 +51,7 @@ python3 ../Scripts/atom-typing.py --infile removed.pdb
 
 ## User manual
 ---
-## Step 1: Create a tile
+### Step 1: Create a tile
 ```
 python3 ../Scripts/create-tile.py
 ```
@@ -65,9 +65,11 @@ python3 ../Scripts/create-tile.py
 | --yfactor | A positive number | Number of replicate of the unit cell in y direction (default is 20) | --yfactor 25 |
 | --keep_hanging_carbon | None | Keep hanging carbon items, if not specified hanging carbon items will be trimmed | N/A |
 | --non_periodic | None | Each tile only can be used individually and cannot be stitches together directly. | N/A |
-### Warning: The actual amount of vacancy of the tile may not be the same as the specified amount of vacancy due to the trimming of the carbons.
 
-## Step 2: Add defect
+*Warning:* 
+The actual amount of vacancy of the tile may not be the same as the specified amount of vacancy due to the trimming of the carbons.
+
+### Step 2: Add defect
 `python3 ../Scripts/add-sw-defects.py`
 
 | **Option names** | **Input value** | **Meaning** | **Example** |
@@ -79,7 +81,9 @@ python3 ../Scripts/create-tile.py
 | --gb | A positive number or zero | Percent of mini-GB defects (default is 0) | --gb 4 |
 | --exclude\_defect\_edges| None | Exclude vacancy edges as sites for topological defects | N/A |
 | --outfile | Filename | Naming the output of the file (default is topo-tile.pdb) | --outfile tile\_topo.pdb |
-### Warning: If multiple tiles need to be stitched together, this code needs to run even if the percentage of defects in a given tile is zero. This ensures that the tiles are created with the same dimensions.
+
+*Warning:* 
+If multiple tiles need to be stitched together, this code needs to run even if the percentage of defects in a given tile is zero. This ensures that the tiles are created with the same dimensions.
 
 ## Step 3: Decorate oxygen
 `python3 ../Scripts/decorate-tile.py`
@@ -94,10 +98,12 @@ python3 ../Scripts/create-tile.py
 | --decorate\_edges\_first | None | Decorate defect edges before the basal plane | N/A |
 | --bunching | A positive number or zero plus a positive number | The first number indicates the index of the atom. The second number indicates the diameter of circle in Angstroms that where the oxygen is going to be decorated. | --bunching 309 10 |
 | --exclude\_tile\_edges| None | Exclude tile edges in the decoration process | N/A |
-### Warning: 1. If multiple tiles need to be stitched together, this code needs to run even if the percentage of oxygen in a given tile is zero. This ensures that the tiles are created with the same dimensions.
-### 2. Fresh or aged must be specified in the options. Otherwise, no oxygen will be added.
-### 3. The code may fail when adding higher amount of oxygen (such as 40%). Please try a few times.
-### 4. For the bunching option, the code cannot produce the correct result when the diameter is too small. Please choose a larger diameter.
+
+*Warnings:* 
+1. If multiple tiles need to be stitched together, this code needs to run even if the percentage of oxygen in a given tile is zero. This ensures that the tiles are created with the same dimensions.
+2. Fresh or aged must be specified in the options. Otherwise, no oxygen will be added.
+3. The code may fail when adding higher amount of oxygen (such as 40%). Please try a few times.
+4. For the bunching option, the code cannot produce the correct result when the diameter is too small. Please choose a larger diameter.
 
 ## Step 4: Stitch
 `python3 ../Scripts/stich.py`
@@ -113,9 +119,11 @@ python3 ../Scripts/create-tile.py
 | --ordered\_tiles | None | Keep the input order of the tiles | N/A |
 | --pbc | None | Keep periodic boundary conditions, otherwise buffer distance of 10 Angstroms is added | N/A |
 | --outfile | Filename | Naming the output of the file (default is stich.pdb) | --outfile tile\_stitch.pdb |
-### Warning: 1. When adding oxygen to the product, the oxygen will be located at the edges first.
-### 2. The code may fail if you trying to make too great adjustment to the total oxygen contents. For example, an adjustment of 1-2% should be fine.
-### 3. Manually check the geometry for questionable atoms. If they occur, remove them.
+
+*Warnings:*
+1. When adding oxygen to the product, the oxygen will be located at the edges first.
+2. The code may fail if you trying to make too great adjustment to the total oxygen contents. For example, an adjustment of 1-2% should be fine.
+3. Manually check the geometry for questionable atoms. If they occur, remove them.
 
 ## Step 5: Remove atoms
 `python3 ../Scripts/remove-atoms.py`
@@ -125,7 +133,9 @@ python3 ../Scripts/create-tile.py
 | --infile | Filename | Filename that have atom(s) that need to be removed | --infile tile\_10.pdb |
 | --i | Positive numbers or zero | The index of atom(s) that need to be removed | --i 7 8 90 |
 | --outfile | Filename | Naming the output of the file (default is removed.pdb) | --outfile tile\_remove.pdb |
-### Warning: This step can be done after conducting any step above. It does not have to be at the last step.
+
+*Warning:*
+This step can be done after conducting any step above. It does not have to be at the last step.
 
 ## Step 6: Atom typing
 `python3 ../Scripts/atom-typing.py`
@@ -135,7 +145,9 @@ python3 ../Scripts/create-tile.py
 | --infile | Filename | Name of the input file | --infile tile\_10.pdb |
 | --outfile | Filename | Name the output of the file (default is typed.pdb) | --outfile tile\_atom.pdb |
 | --pbc | None | Default to ignoring periodic boundary condition. Only required when a single tile is made to be used. Buffer distance is 10 Angstroms for pbc. | N/A |
-### Warning: Some warning could appear especially for the stitched sheet. It is better to check possible problemed atoms in the visualization software.
+
+*Warning:*
+Some warning could appear especially for the stitched sheet. It is better to check possible problem atoms in the visualization software.
 
 
 ## Optional routines:
@@ -147,8 +159,10 @@ python3 ../Scripts/create-tile.py
 | --size | A positive number | Number of replicate of the unit cell in both x and y direction (default is 20) | --size 40 |
 | --outfile | Filename | Name the output of the file (default is rupture.pdb) | --outfile tile\_rup.pdb |
 | --atoms | Positive number or zero | Number of oxygen in the product (default is 4). | --atoms 6 |
-### Warning: 1. The generated tile has zero vacancy.
-### 2. If you want to decorate oxygen using the rupture tile from this code, it could produce wrong structure when adding a higher amount of oxygen (such as 35%).
+
+*Warnings:*
+1. The generated tile has zero vacancy.
+2. If you want to decorate oxygen using the rupture tile from this code, it could produce wrong structure when adding a higher amount of oxygen (such as 35%).
 
 ## Trim hanging carbons
 `python3 ../Scripts/trim-hanging-Cs.py`
@@ -159,8 +173,9 @@ python3 ../Scripts/create-tile.py
 | --outfile | Filename | Name of the output file | --outfile tile\_rup.pdb |
 | --atoms | Positive number or zero | Number of atoms need to be removed | --atoms 6 |
 | --orthogonalize | None | Change the periodic boundary to orthogonal | N/A |
-### Warning: 1. The number of atoms need to be provided otherwise the code cannot work appropriately.
-### 2. There is a default number of atoms to be removed from a structure. If the number of the atoms is below that number, the default number will be applied. Otherwise the provided number will be applied (the actual number of atoms removed could be slightly different to the provided number due to the intrinsic structure)
+*Warnings:*
+1. The number of atoms need to be provided otherwise the code cannot work appropriately.
+2. There is a default number of atoms to be removed from a structure. If the number of the atoms is below that number, the default number will be applied. Otherwise the provided number will be applied (the actual number of atoms removed could be slightly different to the provided number due to the intrinsic structure)
 
 ## Translate pdb file according by a given vector
 `python3 ../Scripts/move\_pdb\_by\_vector.py`
@@ -170,7 +185,9 @@ python3 ../Scripts/create-tile.py
 | -i | Filename | Name of the input file | -i repture.pdb |
 | -out | Filename | Name of the output file | -out tile\_mv.pdb |
 | -vector | A vector | Move the pdb file based on the vector | -vector [10,7,9] |
-### Warning: The cell must be orthogonal.
+
+*Warning:*
+The cell must be orthogonal.
 
 ## Directory layout
 ```
