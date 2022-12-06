@@ -1,7 +1,6 @@
 # HierGO 
 
 ## Quick guide
----
 ```
 ## this workflow requires git. 
 ## getting started with git: https://git-scm.com/book/en/v2/getting-started-installing-git
@@ -49,8 +48,8 @@ python3 ../Scripts/remove-atoms.py -i 1 2 3 4 5
 python3 ../Scripts/atom-typing.py --infile removed.pdb
 ```
 
-## User manual
 ---
+## User manual
 ### Step 1: Create a tile
 ```
 python3 ../Scripts/create-tile.py
