@@ -177,7 +177,7 @@ Some warning could appear especially for the stitched sheet. It is better to che
 2. There is a default number of atoms to be removed from a structure. If the number of the atoms is below that number, the default number will be applied. Otherwise the provided number will be applied (the actual number of atoms removed could be slightly different to the provided number due to the intrinsic structure)
 
 ## Translate pdb file according by a given vector
-`python3 ../Scripts/move\_pdb\_by\_vector.py`
+`python3 ../Scripts/move_pdb_by_vector.py`
 | **Option names** | **Input value** | **Meaning** | **Example** |
 | --- | --- | --- | --- |
 | -h or -help | None | Show the help message | N/A |
