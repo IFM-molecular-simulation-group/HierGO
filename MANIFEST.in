@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include CONTRIBUTING.rst
+include CHANGELOG.md
+include joltml/VERSION
