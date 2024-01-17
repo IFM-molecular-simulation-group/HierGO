@@ -1,0 +1,17 @@
+opls_154   HYD OH1  -0.6830  ###hydroxyl O
+opls_155   HYD  HH   0.4180  ###hydroxyl H
+opls_159   HYD  CD   0.2650  ###hydroxyl C
+opls_180   EPX  OE  -0.4000  ###epoxy    O
+opls_184   EPX  CE   0.2000  ###epoxy    C
+opls_180   ETH  OT  -0.1700  ###ether    O
+opls_518   ETH  CT   0.0850  ###ether    C
+opls_281   CAB  ON  -0.4700  ###carbonyl O
+opls_280   CAB  CN   0.4700  ###carbonyl C
+opls_269  CARB  OC  -0.4400  ###carboxylic OC
+opls_268  CARB  OH  -0.5300  ###carboxylic OH
+opls_270  CARB HC1   0.4500  ###carboxylic H
+opls_267  CARB  CA   0.5200  ###carboxylic C
+opls_147  CARB  CC   0.0000  ###C-carboxylic
+opls_146  GRAT  HC   0.1150  ###terminal H
+opls_145  GRAT  CH  -0.1150  ###terminal C
+opls_147   GRA   C   0.0000  ###In-plane sp2 carbon
